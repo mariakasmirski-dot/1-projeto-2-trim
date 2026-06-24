@@ -26,7 +26,7 @@
                 width: 80px;
                 height: 80px;
             }
-           div p{
+           .artigo-autor{
                 font-weight: bold;
             }
         </style>
@@ -40,9 +40,22 @@
             <img src="imagem-blog.png" alt="""Arte linear abstrata com fundo branco e traços na cor preta #130f14, representando a diversita e a união de diversas texturas e curvaturas de cabelos."" srcset="">
           <div>  
               <h2>meu primeiro post</h2>
-               <p>Por: Maria Kasmirski</p>
+               <p class="artigo-autor">Por: Maria Kasmirski</p>
                <h2>Boas-vindas ao meu primeiro blog! Aqui vou compartilhar dicas e curiosidades sobre cabelos</h2>  
+               <button>🩷 <samp>0</samp></button>
+               <button>💩​ <samp>0</samp></button>
          </div>
         </main>   
    </body>
+   <script>
+    const botoes = document.querySelector("button");
+    botoes.forEach(function(botao){
+        botao.addEventListener("click",botaoClicado);
+        function botaoClicado(){
+            console.log("fui clicado");
+            let texto = botao.querySelector("span");
+            texto.textContent++;
+        }
+     })
+   </script>
 </html>
